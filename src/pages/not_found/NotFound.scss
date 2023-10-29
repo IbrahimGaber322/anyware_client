@@ -1,0 +1,17 @@
+@use "../../styles/variables" as *;
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; // Align text content in the center
+  font-size: 3rem;
+  padding: 20px; // Add padding for better spacing
+
+  // Additional styles for a modern and visually appealing look
+  .icon {
+    font-size: 4rem; // Increase icon size
+    margin-bottom: 20px; // Space between icon and text
+  }
+}

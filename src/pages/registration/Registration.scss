@@ -1,0 +1,22 @@
+@use "../../styles/variables" as *;
+
+.registration {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .wrapper {
+    background-color: map-get($map: $colors, $key: main-white);; // Use the variable directly
+    border-radius: 8px; // Adjusted border radius for a smoother look
+    padding: 20px; // Increased padding for better spacing
+
+    // Additional styling for a modern appearance
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle box-shadow
+    transition: box-shadow 0.3s ease; // Smooth transition on hover
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Slightly increased shadow on hover
+    }
+  }
+}

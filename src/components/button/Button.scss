@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+
+.button {
+  text-transform: capitalize;
+  background-color: transparent;
+  color: map-get($map: $colors, $key: main);
+  height: 40px; /* Converted to pixel value for better control */
+  border-radius: 5px; /* Refined border-radius for a softer look */
+  transition: $transition;
+  font-weight: bold;
+  border: 1px solid map-get($map: $colors, $key: main);
+  cursor: pointer;
+  padding: 10px 20px; /* Adjusted padding for better button proportions */
+
+  &.w-100 {
+    width: 100%;
+  }
+
+  &.fill {
+    background-color: map-get($map: $colors, $key: main);
+    color: map-get($map: $colors, $key: main-white);
+
+    &:hover {
+      background-color: transparent;
+      color: map-get($map: $colors, $key: main);
+    }
+  }
+
+  &:hover {
+    background-color: map-get($map: $colors, $key: main);
+    color: map-get($map: $colors, $key: main-white);
+  }
+}

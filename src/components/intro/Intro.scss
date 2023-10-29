@@ -1,0 +1,51 @@
+@use "../../styles/variables" as *;
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px; /* Example numerical value for margin */
+  background-color: map-get($map: $colors, $key: main-white);
+  padding: 20px; /* Example numerical value for padding */
+  border-radius: 5px; /* Example numerical value for border radius */
+
+  & > * {
+    max-width: 50%;
+    padding: 10px; /* Example numerical value for padding */
+
+    @include smMax {
+      max-width: 100%;
+    }
+  }
+
+  .text {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px; /* Example numerical value for margin */
+      color: map-get($map: $colors, $key: main);
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 15px; /* Example numerical value for margin */
+    }
+
+    span {
+      color: map-get($map: $colors, $key: color-888);
+    }
+
+    div {
+      margin-top: 15px; /* Example numerical value for margin */
+    }
+  }
+
+  .img {
+    img {
+      width: 90%;
+    }
+
+    @include smMax {
+      display: none;
+    }
+  }
+}

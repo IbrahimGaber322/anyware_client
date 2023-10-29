@@ -1,0 +1,23 @@
+@use "../../styles/variables" as *;
+
+.due {
+  .title {
+    text-transform: capitalize;
+    margin-bottom: 15px; /* Adjusted margin for improved spacing */
+
+    span {
+      color: map-get($map: $colors, $key: main);
+      display: inline-block;
+      margin-right: 15px; /* Replaced interpolation with actual value */
+    }
+  }
+
+  .list {
+    margin-top: 0;
+
+    li {
+      text-transform: capitalize;
+      margin-bottom: 8px; /* Added margin for better separation between list items */
+    }
+  }
+}

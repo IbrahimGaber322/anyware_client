@@ -1,0 +1,119 @@
+@use "../../styles/variables" as *;
+
+// General navigation container
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: map-get($map: $colors, $key: main-white);
+  padding: 0.625rem 1.25rem;
+
+  @include smMax {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // Navigation row elements
+  .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.625rem;
+
+    @include smMax {
+      display: block;
+      text-align: center;
+    }
+
+    &:last-of-type {
+      margin-left: auto; // Aligns to the right
+
+      @include smMax {
+        margin-left: 0; // Resets for mobile view
+        justify-content: center;
+
+        & > * {
+          margin-bottom: 0.625rem; // Spacing between elements
+        }
+      }
+    }
+
+    // Sidebar controller icon styling
+    .sidebar-controller-icon {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    // Welcome text styling
+    .welcome {
+      text-transform: capitalize;
+      margin-left: 1.25rem; // Space between icon and text
+    }
+
+    // Search bar styling
+    .search {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+
+      .search-icon {
+        position: absolute;
+        left: 0.625rem; // Left positioning for the search icon
+      }
+    }
+
+    // Navigation icons container
+    .icons {
+      display: inline-flex;
+      align-items: center;
+      color: map-get($map: $colors, $key: main);
+
+      > * {
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer;
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: 0.625rem; // Spacing between icons
+        }
+
+        &:last-child {
+          margin-left: 0.625rem; // Space between last icon and logout
+          margin-right: 0; // Right margin reset
+        }
+      }
+
+      // Individual icon style
+      .icon {
+        padding: 0.625rem;
+        position: relative;
+
+        > .number {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.625rem;
+          background-color: map-get($map: $colors, $key: main);
+          border: 0.0625rem solid white;
+          color: white;
+          border-radius: 50%;
+          width: 1.25rem;
+          height: 1.25rem;
+          top: 0;
+          right: -0.3125rem; // Positioned near the top right of the icon
+        }
+      }
+
+      // Profile image styling
+      img {
+        border-radius: 50%;
+        background-color: map-get(
+          $map: $colors,
+          $key: 888
+        ); // Fallback color for profile images
+      }
+    }
+  }
+}

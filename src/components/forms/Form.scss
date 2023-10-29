@@ -1,0 +1,73 @@
+@use "../../styles/variables" as *;
+
+.form-container {
+  max-width: 600px; /* Increased max-width for a larger form */
+  margin: 0 auto; /* Center the form horizontally */
+
+  padding: 40px; /* Added padding for better spacing and readability */
+  border-radius: 12px; /* Rounded corners for a softer look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle box shadow for a professional appearance */
+  background-color: #f8f8f8; /* Light gray background for the form */
+
+  .heading {
+    text-align: center; /* Center align heading */
+    h1 {
+      font-size: 2.5rem; /* Increased heading font size for emphasis */
+      color: #4285f4; /* Example blue color (you can replace it with your preferred blue color) */
+      margin-bottom: 20px; /* Spacing between heading and form */
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    .input-control {
+      margin-bottom: 30px; /* Increased spacing between input controls */
+
+      input {
+        width: 100%; /* Set input width to 100% for responsiveness */
+        padding: 18px; /* Increased padding for a more comfortable input area */
+        border-radius: 8px; /* Slightly increased border-radius for a softer look */
+        border: 2px solid #e0e0e0; /* Light gray border for input fields */
+        transition: border-color 0.3s ease; /* Smooth transition for input focus */
+        font-size: 16px; /* Adjusted font size for better readability */
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #4285f4; /* Changed border color on focus (same as the header color) */
+      }
+
+      p {
+        text-transform: capitalize;
+        user-select: none;
+        color: #666666; /* Subdued color for the text */
+        margin-top: 8px; /* Adjusted margin for better spacing */
+        font-size: 14px; /* Font size for better readability */
+
+        span {
+          color: #4285f4; /* Blue color for interactive elements (same as header) */
+          cursor: pointer;
+        }
+      }
+    }
+
+    .submit-btn {
+      width: 100%; /* Full-width button */
+      padding: 18px; /* Padding for a more clickable area */
+      border: none;
+      border-radius: 8px; /* Same border radius as input fields for consistency */
+      background-color: #4285f4; /* Using blue color for the button */
+      color: white; /* Text color for better contrast */
+      font-size: 16px; /* Adjusted font size for button text */
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+      margin-top: 30px; /* Spacing between input controls and button */
+
+      &:hover {
+        background-color: #3367d6; /* Darkened shade of blue for the button on hover */
+      }
+    }
+  }
+}

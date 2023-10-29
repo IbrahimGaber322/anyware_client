@@ -1,0 +1,97 @@
+@use "../../styles/variables" as *;
+
+.sidebar {
+  width: 0;
+  min-width: 0;
+  box-shadow: $box-shadow;
+  padding: 1.25rem 0;
+  background: map-get($map: $colors, $key: main);
+  background: linear-gradient(
+    180deg,
+    map-get($map: $colors, $key: main) 0%,
+    map-get($map: $colors, $key: main-alt) 100%
+  );
+  transition: $transition;
+  overflow: hidden;
+
+  &.active {
+    width: 30%;
+    min-width: 16rem;
+
+    @include smMax {
+      width: 100%;
+      min-width: 100%;
+
+      & ~ * {
+        display: none;
+      }
+    }
+  }
+
+  .close {
+    text-align: end;
+    padding: 1.25rem;
+    display: none;
+
+    @include smMax {
+      display: block;
+    }
+
+    button {
+      background-color: transparent;
+      color: map-get($map: $colors, $key: main-white);
+      cursor: pointer;
+      border: none;
+      font-size: inherit;
+    }
+  }
+
+  h3 {
+    margin: 2.5rem 0;
+    color: map-get($map: $colors, $key: main-white);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.875rem;
+    transition: $transition; /* Adding animation transition to h3 element */
+
+    a {
+      color: map-get($map: $colors, $key: main-white);
+
+      &:hover,
+      &:active,
+      &:visited {
+        color: map-get($map: $colors, $key: main-white);
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    list-style: none; /* Remove default list styles */
+
+    li {
+      a {
+        transition: $transition; /* Adding animation transition to anchor elements */
+        display: flex;
+        align-items: center;
+        font-size: 0.9375rem;
+        color: map-get($map: $colors, $key: main-white);
+        padding: 1.25rem 0;
+        padding-left: 1.25rem;
+
+        &:hover,
+        &.active {
+          background-color: map-get($map: $colors, $key: main-white);
+          color: map-get($map: $colors, $key: main-black);
+          border-left: 0.3125rem solid map-get($map: $colors, $key: main-black);
+        }
+
+        span {
+          font-size: 1.125rem;
+          margin-left: 0.9375rem;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

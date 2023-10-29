@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  font-family: "Arial", sans-serif; // Set a different font for the whole section
+
+  .content {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    padding: 20px; // Add padding for better spacing
+  }
+
+  .wrapper {
+    padding: 20px;
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+
+      @include smMax {
+        flex-direction: column;
+        align-items: center; // Center align items in mobile view
+
+        & > * {
+          width: 100% !important;
+          margin-bottom: 20px; // Add margin for mobile view spacing
+        }
+      }
+
+      & > *:nth-child(even) {
+        width: 30%;
+      }
+
+      & > *:nth-child(odd) {
+        width: calc(70% - 20px);
+      }
+
+      // Apply hover animation for a card-like effect
+      & > * {
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.05); // Enlarge on hover
+        }
+      }
+    }
+  }
+}

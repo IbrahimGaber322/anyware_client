@@ -1,0 +1,58 @@
+@use "../../styles/variables" as *;
+
+.announcement {
+  display: flex;
+  gap: 20px; /* Updated gap value for better spacing */
+
+  @include smMax {
+    flex-direction: column;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px; /* Adjusted margin for consistent spacing */
+  }
+
+  .col {
+    @include smMax {
+      width: 100% !important;
+      max-width: none !important;
+    }
+
+    &:first-of-type {
+      width: 30%;
+      max-width: 15rem;
+    }
+
+    &:last-of-type {
+      width: calc(70% - 20px); /* Adjusted width for better alignment */
+      padding-left: 10px; /* Updated padding */
+      border-left: 1px solid map-get($map: $colors, $key: gray-888); /* Use named color for clarity */
+      color: map-get($map: $colors, $key: gray-888);
+      flex-grow: 1;
+
+      @include smMax {
+        border: none;
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 20px; /* Adjusted gap for better spacing */
+
+      img {
+        width: 60px; /* Converted width to pixels for better control */
+        height: 60px; /* Set explicit height */
+        border-radius: 50%; /* Applied border-radius for rounded image */
+        object-fit: cover; /* Ensures image covers the container */
+      }
+
+      .text {
+        p {
+          color: map-get($map: $colors, $key: gray-888);
+          margin: 0; /* Removed redundant margin rule */
+        }
+      }
+    }
+  }
+}
