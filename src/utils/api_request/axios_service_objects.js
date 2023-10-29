@@ -7,7 +7,7 @@ const getToken = () => {
   // Check if the environment is the browser
   if (typeof window !== "undefined") {
     return (
-      process.env.REACT_APP_BEARER_SECRETE + " " + getFromStorage(keys.token)
+      process.env.REACT_APP_BEARER_SECRET + " " + getFromStorage(keys.token)
     ); // Get and append token for authorization
   }
 };
