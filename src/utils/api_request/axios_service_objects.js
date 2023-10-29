@@ -1,6 +1,6 @@
 import { getFromStorage, keys } from "../browser_storage/local_storage.js"; // Importing functions to interact with local storage
 
-const baseUrl = process.env.REACT_APP_BASE_URL; // Base URL for API endpoints
+const baseUrl = process.env.REACT_APP_BASE_URL +  process.env.REACT_APP_CHANNEL; // Base URL for API endpoints
 
 // Function to retrieve the token for authorization
 const getToken = () => {
